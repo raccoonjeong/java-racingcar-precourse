@@ -16,4 +16,19 @@ public class CarTest {
         car.supplyPower(3);
         assertThat(car.getDistance()).isEqualTo(1);
     }
+
+    @Test
+    void 자기_위치_출력() {
+        Car car = new Car();
+        car.supplyPower(3);
+        car.supplyPower(4);
+        car.supplyPower(5);
+        assertThat(car.getDistanceShape()).isEqualTo("--");
+    }
+
+    @Test
+    void 자동차명_확인() {
+        Car car = new Car("페라리");
+        assertThat(car.getName()).isEqualTo("페라리");
+    }
 }
