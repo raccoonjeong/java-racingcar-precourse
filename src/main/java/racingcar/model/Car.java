@@ -1,8 +1,18 @@
 package racingcar.model;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Car {
+
+    @Override
+    public String toString() {
+        return "Car{" +
+            "distance=" + distance +
+            ", name='" + name + '\'' +
+            '}';
+    }
 
     public static final int BITING_POINT = 4;
 
@@ -39,6 +49,14 @@ public class Car {
 
     public static boolean isOverBitingPoint(int power) {
         return power >= BITING_POINT;
+    }
+
+    public void amIWinner(int maxDistance, List winners) {
+
+        if (distance == maxDistance) {
+            winners.add(this.getName());
+        }
+
     }
 
 }

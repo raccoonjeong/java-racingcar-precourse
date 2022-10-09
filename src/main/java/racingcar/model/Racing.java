@@ -1,6 +1,8 @@
 package racingcar.model;
 
 
+import java.util.List;
+
 public class Racing {
 
     private Cars cars;
@@ -18,7 +20,13 @@ public class Racing {
     public void race() {
         for (int i = 0; i < tryCount; i++) {
             this.cars.tryMove();
-            System.out.println("=================");
         }
+    }
+
+    public void announceResult() {
+        int maxDistance = this.cars.aggregateMaxDistance();
+        List winners = this.cars.pickWinners(maxDistance);
+        String result = String.join(",", winners);
+        System.out.println("최종 우승자 : " + result);
     }
 }

@@ -2,6 +2,7 @@ package racingcar.model;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import static racingcar.model.PowerGenerator.generatePower;
@@ -30,5 +31,25 @@ public class Cars {
             car.supplyPower(randomPower);
         }
     }
+
+    public int aggregateMaxDistance() {
+        int maxDistance = 0;
+        for (Car car : carList) {
+            maxDistance = car.getDistance() > maxDistance ? car.getDistance() : maxDistance;
+        }
+        return maxDistance;
+    }
+
+
+    public List pickWinners(int maxDistance) {
+        List<String> winners = new ArrayList<>();
+        for (Car car : carList) {
+            car.amIWinner(maxDistance, winners);
+        }
+
+        return winners;
+    }
+
+
 
 }
