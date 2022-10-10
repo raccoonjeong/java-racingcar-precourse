@@ -30,6 +30,6 @@ public class Racing {
         int maxDistance = this.cars.aggregateMaxDistance();
         List winners = this.cars.pickWinners(maxDistance);
         String result = String.join(",", winners);
-        System.out.println("최종 우승자: " + result);
+        System.out.println("최종 우승자 : " + result);
     }
 }
