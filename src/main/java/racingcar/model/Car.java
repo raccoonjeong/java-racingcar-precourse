@@ -44,7 +44,7 @@ public class Car {
         if (isOverBitingPoint(power)) {
             distance ++;
         }
-        System.out.println(getName() + ":" + getDistanceShape());
+        System.out.println(getName() + ": " + getDistanceShape());
     }
 
     public static boolean isOverBitingPoint(int power) {

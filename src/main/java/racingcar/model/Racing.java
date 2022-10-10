@@ -8,8 +8,11 @@ public class Racing {
     private Cars cars;
     private int tryCount;
 
-    public Racing(String names, int tryCount) {
+    public void readyCars(String names) {
         this.cars = new Cars(names);
+    }
+
+    public void readyTry(int tryCount) {
         this.tryCount = tryCount;
     }
 
@@ -27,6 +30,6 @@ public class Racing {
         int maxDistance = this.cars.aggregateMaxDistance();
         List winners = this.cars.pickWinners(maxDistance);
         String result = String.join(",", winners);
-        System.out.println("최종 우승자 : " + result);
+        System.out.println("최종 우승자: " + result);
     }
 }

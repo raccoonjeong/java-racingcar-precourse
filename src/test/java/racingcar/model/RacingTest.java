@@ -14,13 +14,17 @@ public class RacingTest {
 
     @Test
     void 레이싱_신청() {
-        Racing racing = new Racing("pobi,woni", 1);
+        Racing racing = new Racing();
+        racing.readyCars("pobi,woni");
+        racing.readyTry(3);
         assertThat(racing.getCars().getCarList().size()).isEqualTo(2);
     }
 
     @Test
     void 레이싱() {
-        Racing racing = new Racing("pobi,woni,zz", 10);
+        Racing racing = new Racing();
+        racing.readyCars("pobi,woni,zz");
+        racing.readyTry(10);
         racing.race();
     }
 
